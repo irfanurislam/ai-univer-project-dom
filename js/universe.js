@@ -32,22 +32,24 @@ const loaduser = async () => {
                     <div class="card-body">
                       <h5 class="card-title fw-bold p-0">Feature</h5>
                       <ol type="1" class="card-text p-2" id="featuresItem">
-                      <li class="text-secondary"></li>
-                      <li class="text-secondary"></li>
-                  <li class="text-secondary"></li>
+                      <li class="text-secondary">${features[0]}</li>
+                      <li class="text-secondary">${features[1]}</li>
+                  <li class="text-secondary">${features[2] ? features[2] : "more skills have"}</li>
                         </ol>
                       </div>
                       <hr class="px-2">
                       <div class="card-footer border-0 bg-body">
                        <div class="d-flex justify-content-between align-items-center">
                           <div>
-                              <h4></h4>
+                              <h4>${name}</h4>
                              <div class = "d-flex gap-3 align-items-center mt-2">
-                             
-                              <p></p>
+                              <p> <i class="fa fa-calendar"></i></p>
+                              <p>${published_in}</p>
                              </div>
                           </div>
-                          
+                          <div>
+                              <i class="text-danger fas fa-arrow-right" onclick="loadaiinfo('${id}')"  data-bs-toggle="modal" data-bs-target="#aiinfodetails"></i>
+                          </div>
                        </div>
                       </div>
                     </div>
