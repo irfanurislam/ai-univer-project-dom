@@ -216,6 +216,27 @@ else{
 // ending feature 
 
 
+// pricing stproperties
+const priceFirst = document.getElementById('priceFirst');
+const priceSecond = document.getElementById('priceSecond');
+const priceThird = document.getElementById('priceThird');
+//priceFirst.innerHTML = `${pricing[0].price}`
+ if(pricing){
+  priceFirst.innerHTML = `${pricing[0].price !== '0' && pricing[0].price !== 'No cost' ? pricing[0].price : 'Free of cost'} ${pricing[0].plan}`;
+  priceSecond.innerHTML = `${pricing[1].price !== '0' && pricing[1].price !== 'No cost' ? pricing[1].price : 'Free of cost'} ${pricing[1].plan}`;
+  priceThird.innerHTML = `${pricing[0].price !== '0' && pricing[0].price !== 'No cost' ? pricing[2].price : 'Free of cost'} ${pricing[2].plan}`;
+  
+
+}
+else{
+  priceFirst.innerHTML ="free of cost / Basic";
+  priceSecond.innerHTML = "free of cost/ pro";
+  priceThird.innerHTML = "free of cost / Enterprise";
+
+
+} 
+
+// ending pricing
 
 
 
