@@ -59,7 +59,7 @@ const loaduser = async () => {
       `;
       aicontainer.appendChild(div);
     });
-  
+    tooglespin(false);
   
   }
 
@@ -73,3 +73,16 @@ const loaduser = async () => {
         document.getElementById('showdata').classList.add('d-none');
       });
   };
+
+
+  // spinners
+
+const tooglespin = (isloading) => {
+  const loadersection = document.getElementById('loaderspin');
+  if (isloading) {
+    loadersection.classList.remove('d-none');
+  } else {
+    loadersection.classList.add('d-none');
+  }
+}
+//
