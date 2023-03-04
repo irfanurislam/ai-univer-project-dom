@@ -202,7 +202,18 @@ if (accuracy.score !== null) {
   // end accuricy
 
 
-
+// feature set property
+const featurlist = document.getElementById('feature'); 
+if(features){
+ for(let keys in features){
+  //console.log(features[keys].feature_name);
+  featurlist.innerHTML += `<li>${features[keys].feature_name}</li>`;
+  }
+}
+else{
+  features.innerHTML = 'data not found';
+}
+// ending feature 
 
 
 
