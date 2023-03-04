@@ -29,7 +29,7 @@ const loaduser = async () => {
   
   loaduser();
 
-  
+
 
   const displayai = (data) => {
     console.log(data);
@@ -105,3 +105,93 @@ const tooglespin = (isloading) => {
   }
 }
 //
+
+
+// loadid 
+
+const loadaiinfo = (id) => {
+    fetch(` https://openapi.programming-hero.com/api/ai/tool/${id}`)
+      .then(res => res.json())
+      .then(data => displayaiinfo(data.data))
+  }
+  
+  
+  
+  
+  const displayaiinfo = (data) => {
+    //console.log(data?.input_output_examples[0].input);
+    console.log(data);
+     
+    const infoaicontainer = document.getElementById('aiinfocontainer');
+    infoaicontainer.innerHTML = `
+      
+      <div class ="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-sm-1 g-4"">
+           <div class="col">
+            <div class="card h-100 p-2 border-danger border rounded-2" style="background-color:#fef7f7;">
+            
+              <div class="card-body">
+                  <p class="fw-bold">${description}</p>
+               <div class="flex-md-column flex-xl-row flex-column d-flex justify-content-between align-items-center gap-4 mt-2" id="pricinginner">
+               <div class=" bg-body rounded-4  px-2 py-4">
+               <h4 class="text-success text-center" id ="priceFirst"></h4>
+             </div>
+             <div class=" bg-body rounded-4 px-2 py-4">
+               <h4 class="text-info  text-center" id="priceSecond"></h4>
+             </div>
+             <div class=" bg-body rounded-4 px-2 py-4">
+               <h4 class="text-danger text-center" id="priceThird"></h4>
+             </div>
+             
+  
+               </div>
+             
+               <div class="d-flex justify-content-between mt-5">
+                 <div>
+                  <h3>features</h3>
+                  <ul class="text-secondary" id="feature">
+                  
+                      
+                  </ul>
+                 </div>
+                 <div>
+                  <h3>Integrations
+                  </h3>
+                  <div id= "intregationli">
+                  <ul class ="text-secondary" id="innerset">
+                  
+                  
+                 
+              </ul>
+                  </div>
+                               
+                      
+                     
+                      
+                  
+                 </div>
+               </div>
+              </div>
+             
+            </div>
+          </div>
+           <div class="col">
+            <div class="card h-100 p-2">
+            <div class="position-relative">
+              <img src="${image_link[0]}" class="rounded-5 p-3 card-img-top" alt="..." >
+              <div class="position-absolute top-0 end-0"><span id='score_badge' class="px-5 badge bg-danger"></span></div>
+              </div>
+              <div class="card-body">
+                <h4 class ="card-title text-center">${input_output_examples ? input_output_examples[0]?.input : "Can you give any example?"}</h4>
+                <p class ="card-text text-center">${input_output_examples ? input_output_examples[1].output : "No! Not Yet! Take a break!!!"} </p>
+              </div>
+            </div>
+          </div> 
+        </div>
+      
+      `;
+  
+   
+  
+  
+  }
+  
