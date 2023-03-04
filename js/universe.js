@@ -62,3 +62,14 @@ const loaduser = async () => {
   
   
   }
+
+  const showAllDataTogether = () => {
+    fetch("https://openapi.programming-hero.com/api/ai/tools")
+      .then((res) => res.json())
+      .then((data) => {
+        /* const sorted = data.data.tools;
+        sorted.sort((a,b) => new Date(a.published_in) - new Date(b.published_in)); */
+        displayai(data.data.tools)
+        document.getElementById('showdata').classList.add('d-none');
+      });
+  };
