@@ -191,6 +191,23 @@ const loadaiinfo = (id) => {
       `;
   
    
+// accuracy badge 
+if (accuracy.score !== null) {
+    document.getElementById('score_badge').innerText = `${accuracy.score * 100}  % accuracy`
+
+  } else {
+    document.getElementById('score_badge').classList.add('d-none')
+  }
+
+  // end accuricy
+
+
+
+
+
+
+
+
   
   
   }
