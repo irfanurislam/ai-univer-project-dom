@@ -238,6 +238,28 @@ else{
 
 // ending pricing
 
+//  integration loop
+const liText = document.getElementById('innerset');
+if (integrations){
+   
+  for (let element of integrations) {
+
+   const li = document.createElement('li');
+   li.innerHTML = `${element}`;
+   liText.appendChild(li);
+
+  }
+
+   
+  
+}
+else {
+  
+  liText.innerHTML = "No data found";
+ 
+}
+
+// integration
 
 
   
