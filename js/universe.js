@@ -121,7 +121,7 @@ const loadaiinfo = (id) => {
   const displayaiinfo = (data) => {
     //console.log(data?.input_output_examples[0].input);
     console.log(data);
-     
+    const { description, pricing, features, integrations, input_output_examples,image_link, accuracy } = data;
     const infoaicontainer = document.getElementById('aiinfocontainer');
     infoaicontainer.innerHTML = `
       
