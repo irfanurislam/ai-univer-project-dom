@@ -10,7 +10,26 @@ const loaduser = async () => {
     }
   
   }
+
+//   fecth sorting data
+  const loadUserSort = async () => {
+    try {
+      const res = await fetch(`https://openapi.programming-hero.com/api/ai/tools`)
+      const data = await res.json();
+      console.log(data.data.tools);
+     const sorted = data.data.tools;
+     sorted.sort((a,b) => new Date(a.published_in) - new Date(b.published_in));
+      displayai(data.data.tools);
+    }
+    catch (error) {
+      console.log(error);
+    }
+  
+  }
+  
   loaduser();
+
+  
 
   const displayai = (data) => {
     console.log(data);
